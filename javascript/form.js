@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function validateName() {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
-    name.addEventListener('input', function() {
+    name.addEventListener('input', function () {
         try {
             let personData = new AddressBookApp();
             personData.name = name.value;
@@ -23,7 +23,7 @@ function validateName() {
 function validatePhone() {
     const phone = document.querySelector('#phone');
     const phoneError = document.querySelector('.phone-error');
-    phone.addEventListener('input', function() {
+    phone.addEventListener('input', function () {
         try {
             let personData = new AddressBookApp();
             personData.phone = phone.value;
@@ -37,7 +37,7 @@ function validatePhone() {
 function validateAddress() {
     const address = document.querySelector('#address');
     const addressError = document.querySelector('.address-error');
-    address.addEventListener('input', function() {
+    address.addEventListener('input', function () {
         try {
             let personData = new AddressBookApp();
             personData.address = address.value;
@@ -116,4 +116,31 @@ const createNewBookId = () => {
     bookId = !bookId ? 1 : (parseInt(bookId) + 1).toString();
     localStorage.setItem('BookId', bookId);
     return bookId;
+}
+
+const cancel = () => {
+    window.location.replace(Site_Properties.home);
+}
+
+function resetTheForm() {
+    const resetForm = () => {
+        setTextValue('#name', '');
+        setTextValue('#phone', '');
+        setValue('#address', '');
+        setTextValue('#ciy', '');
+        setTextValue('#state', '');
+        setTextValue('#zipcode', '');
+    }
+
+    const setTextValue = (id, message) => {
+        const textError = document.querySelector(id);
+        textError.textContent = message;
+    }
+
+    const setValue = (id, value) => {
+        let element = document.querySelector(id);
+        element.value = value;
+    }
+    console.log(resetForm);
+    alert("Data has been reset now")
 }

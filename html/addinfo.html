@@ -8,8 +8,10 @@
     <title>Addressbook Practice</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="../javascript/addressbookformvalidation.js"></script>
-    <script type="javascript" src="../javascript/addressbook.js"></script>
+    <script type="text/javascript" src="../javascript/AddressBookApp.js"></script>
+    <script type="text/javascript" src="../javascript/form.js"></script>
+    <script type="text/javascript" src="../javascript/Site_Properties.js"></script>
+
 </head>
 <style>
 
@@ -29,14 +31,13 @@
 
     <!-- UC2 Ability to add Form Header-->
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();" onreset="reset();">
+        <form class="form" action="#" onsubmit="save(event);" id="resetform()">
             <div class="form-head">
                 <span class="form-head-text">PERSON ADDRESS FORM</span>
                 <span class="cross-icon">
-                    <ion-icon class="close-circle" name="close-circle"></ion-icon>
+                    <ion-icon class="close-circle" name="close-circle" onclick="cancel();"></ion-icon>
                 </span>
             </div>
-
             <!-- UC3 Add Form Input Fields to the Address Book Form UI-->
             <div class="body">
                 <label class="label text" for="name">Full Name</label><br>&nbsp;
@@ -57,12 +58,12 @@
                     <div class="label-city">
                         <label class="city" for="city">City</label><br>&nbsp;
                         <select id="city" name="city">
-                            <option value="0">Select City</option>
-                            <option value="1 ">Ambala</option>
-                            <option value="2 ">Gurgaon</option>
-                            <option value="3 ">Noida</option>
-                            <option value="4 ">Shimla</option>
-                            <option value="5 ">Chennai</option>
+                            <option value="">Select City</option>
+                            <option value="Ambala">Ambala</option>
+                            <option value="Gurgaon">Gurgaon</option>
+                            <option value="Noida">Noida</option>
+                            <option value="Shimla">Shimla</option>
+                            <option value="Chennai">Chennai</option>
                         </select>
                     </div>
                     <div class="label-state">
@@ -78,13 +79,14 @@
                     </div>
                     <div class="label-zip">
                         <label class="zip" for="zipcode">Zipcode</label></br>&nbsp;
-                        <input class="input" id="zipcode " name="zipcode"></input>
+                        <input class="input" type="zipcode" id="zipcode" name="zipcode"></input>
                     </div>
                 </div>
 
                 <!-- UC5 Add submit and reset button at the end of the form-->
                 <div class="add-reset">
-                    <button type="add" class="addButton" id="addButton">Submit</button>
+                    <a href="./Home_Page.html"></a>
+                    <button type="submit" class="addButton" id="addButton">Submit</button>
                     <button type="reset" class="resetButton" id="resetButton">Reset</button>
                 </div>
             </div>

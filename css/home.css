@@ -142,7 +142,7 @@ th {
 
 tr:not(:first-child) {
     background: #ffffff;
-    border: 1px solid#e3e3e3;
+    border: 1px solid #e3e3e3;
 }
 
 td {
